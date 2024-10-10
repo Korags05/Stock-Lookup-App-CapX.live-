@@ -1,21 +1,21 @@
 ## Stock Lookup App
-# *Overview:*
+# Overview:
 With the help of this Android app, users may look up stocks by symbol and view details like the company name, current price, and percentage change. 
 Kotlin, Jetpack Compose, and Retrofit are used in the app's development in order to integrate the Alpha Vantage stock market API.
 
-# *Features:*
+# Features:
 1) Input a stock symbol (e.g., AAPL, TSLA) to search for stock data.
 2) Displays the company name, current stock price, and percentage change.
 3) Real-time stock data fetching with loading and error handling states.
 4) Simple, clean user interface with user-friendly interaction.
 
-# *API Used:*
+# API Used:
 The app uses the Alpha Vantage stock market API to fetch stock data.
-Base URL: https://www.alphavantage.co/
-API Endpoint: TIME_SERIES_DAILY
-API Key: Use your own API key from Alpha Vantage.
+1) Base URL: https://www.alphavantage.co/
+2) API Endpoint: TIME_SERIES_DAILY
+3) API Key: Use your own API key from Alpha Vantage.
 
-# *Tech Stack:*
+# Tech Stack:
 Kotlin: Programming language used for development.
 Jetpack Compose: For building the user interface.
 Retrofit: For API requests.
