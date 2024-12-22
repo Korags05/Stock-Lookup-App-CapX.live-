@@ -7,6 +7,7 @@ import androidx.annotation.RequiresExtension
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -90,21 +91,29 @@ fun StockApp(viewModel: StockViewModel) {
 
         Spacer(modifier = Modifier.padding(25.dp))
 
-        Column(
-            modifier = Modifier.padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+        Box(
+            contentAlignment = Alignment.Center
         ) {
-            if (isLoading) {
-                LinearProgressIndicator(color = colorResource(id = R.color.orange))
-            } else if (errorMessage.isNotEmpty()) {
-                Text(text = errorMessage, color = MaterialTheme.colorScheme.error)
-            } else if (stockData != null) {
-                StockDetails(stockData!!)
+            Card(
+                modifier = Modifier.height(184.dp).width(280.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.rectblur),
+                    modifier = Modifier.fillMaxSize(),
+                    contentDescription = null
+                )
+            }
+            Column {
+                if (isLoading) {
+                    LinearProgressIndicator(color = colorResource(id = R.color.orange))
+                } else if (errorMessage.isNotEmpty()) {
+                    Text(text = errorMessage, color = MaterialTheme.colorScheme.error)
+                } else if (stockData != null) {
+                    StockDetails(stockData!!)
+                }
             }
         }
-
-
     }
 
 }
