@@ -12,6 +12,7 @@ class StockRepo {
         return try {
             val response = RetrofitInstance.api.getStockData(symbol)
 
+            // Check if the time series is null or empty
             if (response.timeSeries.isNullOrEmpty()) {
                 throw Exception("Invalid stock symbol or no data available")
             }

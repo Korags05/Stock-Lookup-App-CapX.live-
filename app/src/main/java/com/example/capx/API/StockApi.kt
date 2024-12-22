@@ -8,6 +8,6 @@ interface StockAPI {
     @GET("query?function=TIME_SERIES_DAILY")
     suspend fun getStockData(
         @Query("symbol") symbol: String,
-        @Query("apikey") apiKey: String = "YOUR_API_KEY_HERE"
+        @Query("apikey") apiKey: String = "HH7ZQ0Q5ZKDJ1PUP"
     ): StockResponse
 }
